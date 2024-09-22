@@ -1,11 +1,18 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <CapiDettaglio :id="$route.params.id" />
   </div>
 </template>
 
 <script>
+import CapiDettaglio from "@/components/CapiDettaglio.vue";
+
 // @ is an alias to /src
 
-export default {};
+export default {
+  components: {
+    CapiDettaglio,
+  },
+};
 </script>
