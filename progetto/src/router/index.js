@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContattiView from "@/views/ContattiView.vue";
+import CapiView from "@/views/CapiView.vue";
 
 const routes = [
   {
@@ -21,6 +22,12 @@ const routes = [
     path: "/contatti",
     name: "contatti",
     component: ContattiView,
+  },
+  {
+    path: "/capi/:id",
+    name: "CapiView",
+    component: CapiView,
+    props: true,
   },
 ];
 
