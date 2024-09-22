@@ -1,10 +1,25 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <NavBar />
+    <!--<router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/contatti">Contatti</router-link>-->
   </nav>
   <router-view />
+  <MainFooter />
 </template>
+
+<script>
+import NavBar from "@/components/NavBar.vue";
+import MainFooter from "./components/MainFooter.vue";
+
+export default {
+  components: {
+    NavBar,
+    MainFooter,
+  },
+};
+</script>
 
 <style>
 #app {
