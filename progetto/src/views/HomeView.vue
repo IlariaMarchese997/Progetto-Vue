@@ -3,7 +3,7 @@
     <img alt="Zuhair Murad's logo" src="../assets/logo.webp" />
     <HelloWorld msg="Welcome to Zuhair Murad fashion shows' web app " />
   </div>
-    <div class="col-md-6">
+  <div class="col-md-6">
     <div class="card mx auto" style="width: 80%">
       <div id="carosellosfilate" class="carousel slide">
         <div class="carousel-inner">
@@ -56,12 +56,12 @@
         </button>
       </div>
 
-      <div class="card-body" style="text-align:center">
+      <div class="card-body" style="text-align: center">
         <h3 class="card-title">- Fashion shows' list -</h3>
-        <h5 class="card-text" style="margin:3%">SPRING 2025</h5>
-        <h5 class="card-text" style="margin:3%">FALL 2024</h5>
-        <h5 class="card-text" style="margin:3%">SPRING 2024</h5>
-        <h5 class="card-text" style="margin:3%">FALL 2023</h5>
+        <h5 class="card-text" style="margin: 3%">SPRING 2025</h5>
+        <h5 class="card-text" style="margin: 3%">FALL 2024</h5>
+        <h5 class="card-text" style="margin: 3%">SPRING 2024</h5>
+        <h5 class="card-text" style="margin: 3%">FALL 2023</h5>
       </div>
     </div>
   </div>
