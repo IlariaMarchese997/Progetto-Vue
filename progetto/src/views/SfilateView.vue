@@ -57,21 +57,27 @@ export default {
       capi: [
         {
           id: 1,
-          nome: "Vestito",
+          nome: "Cady Jumpsuit",
           descrizione: "Cady Jumpsuit",
           image: require("@/assets/Prefall2024/Cady-Jumpsuit.jpg"), // Immagine del capo
         },
         {
           id: 2,
-          nome: "Vestito cady",
+          nome: "Cady Long Dress",
           descrizione: "Cady Long Dress",
-          image: require("@/assets/Prefall2024/Cady-Long-Dress.jpeg"),
+          image: require("@/assets/Prefall2024/Cady-Long-Dress.jpg"),
         },
         {
           id: 3,
-          nome: "Embroidered Vestito",
+          nome: "Embroidered Dress",
           descrizione: "Embroidered",
           image: require("@/assets/Prefall2024/Embroidered-Dress.jpg"),
+        },
+        {
+          id: 4,
+          nome: "Chiffon Draped Dress",
+          descrizione: "Chiffon Draped Dress",
+          image: require("@/assets/Prefall2024/Chiffon-Draped-Dress.jpg"),
         },
       ],
     };

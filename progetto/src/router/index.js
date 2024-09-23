@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ContattiView from "@/views/ContattiView.vue";
 import CapiView from "@/views/CapiView.vue";
+import SfilateView from "@/views/SfilateView.vue";
 
 const routes = [
   {
@@ -19,9 +19,9 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/CapiView.vue"),
   },
   {
-    path: "/contatti",
-    name: "contatti",
-    component: ContattiView,
+    path: "/Sfilate",
+    name: "Sfilate",
+    component: SfilateView,
   },
   {
     path: "/capi/:id",

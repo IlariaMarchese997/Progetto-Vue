@@ -23,8 +23,8 @@
             >
           </li>
           <li class="nav-item">
-            <router-link :to="{ name: 'contatti' }" class="nav-link"
-              >Contatti</router-link
+            <router-link :to="{ name: 'Sfilate' }" class="nav-link"
+              >Sfilate</router-link
             >
           </li>
           <li class="nav-item">
