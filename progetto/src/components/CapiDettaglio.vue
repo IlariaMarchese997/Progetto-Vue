@@ -1,9 +1,17 @@
 <template>
   <div v-if="capo">
     <h2>{{ capo.nome }}</h2>
-
-    <!-- Mini Carosello per il capo selezionato -->
     <div id="carouselDettagli" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li
+          v-for="(immagine, index) in capo.images"
+          :key="index"
+          :data-bs-target="'#carouselDettagli'"
+          :data-bs-slide-to="index"
+          :class="{ active: index === 0 }"
+        ></li>
+      </ol>
+
       <div class="carousel-inner">
         <div
           class="carousel-item"
@@ -48,7 +56,7 @@ export default {
       capi: [
         {
           id: 1,
-          nome: "Vestito",
+          nome: "Cady Jumpsuit",
           descrizione: "Cady Jumpsuit",
           images: [
             require("@/assets/Prefall2024/Cady-Jumpsuit.jpg"),
@@ -109,5 +117,8 @@ export default {
 .carousel-inner img {
   max-height: 400px;
   object-fit: cover;
+}
+.carousel-indicators li::marker {
+  content: ""; /* Nasconde il contenuto del marker */
 }
 </style>
