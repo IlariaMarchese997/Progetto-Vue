@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Zuhair Murad's logo" src="../assets/logo.webp" />
-    <HelloWorld msg="Welcome to Zuhair Murad fashion shows' web app " />
+    <HelloWorld msg="" />
   </div>
-  <div class="col-md-6">
-    <div class="card mx auto" style="width: 80%">
+  <div class="col-md-9">
+    <div class="card mx auto" style="width: 100%">
       <div id="carosellosfilate" class="carousel slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -65,16 +64,23 @@
       </div>
     </div>
   </div>
+
+  <div class="d-none d-md-block col-md-3">
+    <div class="card mx-auto" style="width: 80%">
+      <img
+        src="assets/Prefall2024/Cady_Jumpsuit.jpg"
+        class="card-img-top"
+        alt="card-1"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
-  },
+  components: {},
 };
 </script>

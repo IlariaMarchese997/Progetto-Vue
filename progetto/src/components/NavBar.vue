@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-md bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="https://google.it" target="_blank"
-        >Nomelogo</a
-      >
+        ><img alt="Zuhair Murad's logo" width="300px" src="../assets/logo.webp"
+      /></a>
       <button
         class="navbar-toggler"
         type="button"
