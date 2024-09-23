@@ -72,6 +72,9 @@
         class="card-img-top"
         alt="card-1"
       />
+      <div class="card-body">
+        <h5 class></h5>
+      </div>
     </div>
   </div>
 </template>
