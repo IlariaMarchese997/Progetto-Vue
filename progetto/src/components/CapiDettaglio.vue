@@ -1,50 +1,64 @@
 <template>
-  <div v-if="capo">
-    <h2>{{ capo.nome }}</h2>
-    <div id="carouselDettagli" class="carousel slide" data-bs-ride="carousel">
-      <ol class="carousel-indicators">
-        <li
-          v-for="(immagine, index) in capo.images"
-          :key="index"
-          :data-bs-target="'#carouselDettagli'"
-          :data-bs-slide-to="index"
-          :class="{ active: index === 0 }"
-        ></li>
-      </ol>
-
-      <div class="carousel-inner">
+  <div v-if="capo" class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
         <div
-          class="carousel-item"
-          v-for="(immagine, index) in capo.images"
-          :class="{ active: index === 0 }"
-          :key="index"
+          id="carouselDettagli"
+          class="carousel slide"
+          data-bs-ride="carousel"
         >
-          <img :src="immagine" class="d-block w-100" :alt="capo.nome" />
+          <ol class="carousel-indicators">
+            <li
+              v-for="(immagine, index) in capo.images"
+              :key="index"
+              :data-bs-target="'#carouselDettagli'"
+              :data-bs-slide-to="index"
+              :class="{ active: index === 0 }"
+            ></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div
+              class="carousel-item"
+              v-for="(immagine, index) in capo.images"
+              :class="{ active: index === 0 }"
+              :key="index"
+            >
+              <img :src="immagine" class="d-block w-100" :alt="capo.nome" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselDettagli"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselDettagli"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-
-      <!-- Controls for next/previous buttons -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselDettagli"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselDettagli"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="col-md-6">
+        <h1>{{ capo.nome }}</h1>
+        <p>{{ capo.descrizione }}</p>
+        <ul>
+          <li><strong>Descrizione:</strong> {{ capo.descrizione }}</li>
+          <li><strong>Materiale:</strong> {{ capo.composizione }}</li>
+          <li><strong>Lining</strong> {{ capo.lining }}</li>
+          <li><strong>Made in:</strong> {{ capo.made }}</li>
+          <li><strong>Numero di Serie</strong> {{ capo.numeroDiSerie }}</li>
+        </ul>
+      </div>
     </div>
-
-    <p>{{ capo.descrizione }}</p>
   </div>
 </template>
 
@@ -58,6 +72,10 @@ export default {
           id: 1,
           nome: "Cady Jumpsuit",
           descrizione: "Cady Jumpsuit",
+          composizione: "Poliestere",
+          lining: 2024,
+          made: "Designer A",
+          numeroDiSerie: "PDR2400-3193952",
           images: [
             require("@/assets/Prefall2024/Cady-Jumpsuit.jpg"),
             require("@/assets/Prefall2024/Cady-Jumpsuit2.jpeg"),
@@ -70,6 +88,10 @@ export default {
           id: 2,
           nome: "Vestito cady",
           descrizione: "Cady Long Dress",
+          composizione: "Poliestere",
+          lining: 2024,
+          made: "Designer A",
+          numeroDiSerie: "PDR2400-3193952",
           images: [
             require("@/assets/Prefall2024/Cady-Long-Dress.jpg"),
             require("@/assets/Prefall2024/Cady-Long-Dress2.jpeg"),
@@ -81,7 +103,11 @@ export default {
         {
           id: 3,
           nome: "Embroidered Vestito",
-          descrizione: "Embroidered Dress",
+          descrizione: "Cady Long Dress",
+          composizione: "Poliestere",
+          lining: 2024,
+          made: "Designer A",
+          numeroDiSerie: "PDR2400-3193952",
           images: [
             require("@/assets/Prefall2024/Embroidered-Dress.jpg"),
             require("@/assets/Prefall2024/Embroidered-Dress2.jpeg"),
@@ -92,8 +118,12 @@ export default {
         },
         {
           id: 4,
-          nome: "Chiffon Draped Dress",
-          descrizione: "Chiffon Draped Dress",
+          nome: "Chiffon Draped Long Dress",
+          descrizione: "Chiffon Draped Long Dress in 100% Silk",
+          composizione: "100 % Silk",
+          lining: "100 % Silk",
+          made: "Lebanon",
+          numeroDiSerie: "PDR24003-193952",
           images: [
             require("@/assets/Prefall2024/Chiffon-Draped-Dress.jpg"),
             require("@/assets/Prefall2024/Chiffon-Draped-Dress2.jpeg"),
