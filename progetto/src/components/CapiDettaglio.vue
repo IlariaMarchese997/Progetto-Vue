@@ -50,12 +50,14 @@
       <div class="col-md-6">
         <h1>{{ capo.nome }}</h1>
         <p>{{ capo.descrizione }}</p>
-        <ul>
-          <li><strong>Descrizione:</strong> {{ capo.descrizione }}</li>
-          <li><strong>Materiale:</strong> {{ capo.composizione }}</li>
+        <ul id="descrizione">
+          <li><strong>Description:</strong> {{ capo.descrizione }}</li>
+          <li><strong>Material:</strong> {{ capo.composizione }}</li>
+          <li><strong>Price:</strong> {{ capo.costo }}</li>
           <li><strong>Lining</strong> {{ capo.lining }}</li>
           <li><strong>Made in:</strong> {{ capo.made }}</li>
-          <li><strong>Numero di Serie</strong> {{ capo.numeroDiSerie }}</li>
+          <li><strong>Clean:</strong> {{ capo.lavaggio }}</li>
+          <li><strong>Serial Number</strong> {{ capo.numeroDiSerie }}</li>
         </ul>
       </div>
     </div>
@@ -71,11 +73,13 @@ export default {
         {
           id: 1,
           nome: "Cady Jumpsuit",
-          descrizione: "Cady Jumpsuit",
-          composizione: "Poliestere",
-          lining: 2024,
-          made: "Designer A",
-          numeroDiSerie: "PDR2400-3193952",
+          descrizione: "Cady Sleeveless Jumpsuit",
+          costo: "2,970 EUR",
+          composizione: "87% Acetate 13% Polyester",
+          lining: "100% Polyester",
+          made: "Italy",
+          lavaggio: "Dry Clean Only",
+          numeroDiSerie: "PJS24305-190000",
           images: [
             require("@/assets/Prefall2024/Cady-Jumpsuit.jpg"),
             require("@/assets/Prefall2024/Cady-Jumpsuit2.jpeg"),
@@ -86,12 +90,14 @@ export default {
         },
         {
           id: 2,
-          nome: "Vestito cady",
-          descrizione: "Cady Long Dress",
-          composizione: "Poliestere",
-          lining: 2024,
-          made: "Designer A",
-          numeroDiSerie: "PDR2400-3193952",
+          nome: "Cady Long Dress",
+          descrizione: "Cady One-Shoulder Long Dress with Side Cape ",
+          costo: "3,390 EUR",
+          composizione: "87% Acetate 13% Polyester",
+          lining: "Removable lining included, 100% Polyester",
+          made: "Italy",
+          lavaggio: "Dry Clean Only",
+          numeroDiSerie: "PDR24304-111001",
           images: [
             require("@/assets/Prefall2024/Cady-Long-Dress.jpg"),
             require("@/assets/Prefall2024/Cady-Long-Dress2.jpeg"),
@@ -102,12 +108,14 @@ export default {
         },
         {
           id: 3,
-          nome: "Embroidered Vestito",
-          descrizione: "Cady Long Dress",
-          composizione: "Poliestere",
-          lining: 2024,
-          made: "Designer A",
-          numeroDiSerie: "PDR2400-3193952",
+          nome: "Embroidered Dress",
+          descrizione: "Embroidered Dress",
+          costo: "2,450 EUR",
+          composizione: "64% Polyester 36% Nylon",
+          lining: "100 % Silk",
+          made: "Lebanon",
+          lavaggio: "Dry Clean Only",
+          numeroDiSerie: "PDR24004-190000",
           images: [
             require("@/assets/Prefall2024/Embroidered-Dress.jpg"),
             require("@/assets/Prefall2024/Embroidered-Dress2.jpeg"),
@@ -120,9 +128,11 @@ export default {
           id: 4,
           nome: "Chiffon Draped Long Dress",
           descrizione: "Chiffon Draped Long Dress in 100% Silk",
+          costo: "4,370 EUR",
           composizione: "100 % Silk",
           lining: "100 % Silk",
           made: "Lebanon",
+          lavaggio: "Dry Clean Only",
           numeroDiSerie: "PDR24003-193952",
           images: [
             require("@/assets/Prefall2024/Chiffon-Draped-Dress.jpg"),
@@ -150,5 +160,8 @@ export default {
 }
 .carousel-indicators li::marker {
   content: ""; /* Nasconde il contenuto del marker */
+}
+#descrizione {
+  list-style-type: none;
 }
 </style>
