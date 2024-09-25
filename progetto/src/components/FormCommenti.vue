@@ -1,54 +1,50 @@
 <template>
-  <div>
-    <form class="comment-form" @submit.prevent="onSubmit">
-      <p>
-        <label for="nome">Name</label>
-        <input id="nome" v-model="commento.nome" required />
-      </p>
-      <p>
-        <label for="cognome">Surname</label>
-        <input id="cognome" v-model="commento.cognome" required />
-      </p>
-      <p>
-        <label for="email">Email</label>
-        <input id="email" type="email" v-model="commento.email" required />
-      </p>
-      <p>
-        <label for="fit">What do you think of the fit of the item?</label>
-        <textarea id="fit" v-model="commento.vestibilita" required></textarea>
-      </p>
-      <p>
-        <label for="quality"
-          >What do you think of the quality of the fabric?</label
-        >
-        <textarea id="quality" v-model="commento.qualita" required></textarea>
-      </p>
-      <p>
-        <label for="style">What do you think of the style of the item?</label>
-        <textarea id="style" v-model="commento.stile" required></textarea>
-      </p>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="comment-form" @submit.prevent="onSubmit">
+          <p>
+            <label for="nome">Name</label>
+            <input id="nome" v-model="commento.nome" required />
+          </p>
+          <p>
+            <label for="cognome">Surname</label>
+            <input id="cognome" v-model="commento.cognome" required />
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input id="email" type="email" v-model="commento.email" required />
+          </p>
+          <p>
+            <label for="style">Leave a feedback</label>
+            <textarea id="style" v-model="commento.stile" required></textarea>
+          </p>
 
-      <p>
-        <input type="submit" value="Submit Comment" />
-      </p>
-    </form>
+          <p>
+            <input
+              type="submit"
+              value="Submit Comment"
+              class="btn btn-primary"
+            />
+          </p>
+        </form>
 
-    <div v-if="messaggioSuccesso" class="success">
-      {{ messaggioSuccesso }}
-    </div>
+        <div v-if="messaggioSuccesso" class="success">
+          {{ messaggioSuccesso }}
+        </div>
+      </div>
 
-    <div>
-      <h2>Commenti</h2>
-      <ul id="commenti">
-        <li v-for="commento in commenti" :key="commento.id">
-          <strong>{{ commento.nome }} {{ commento.cognome }}</strong>
-          <p>{{ commento.contenuto }}</p>
-          <small>{{ commento.email }}</small>
-          <strong>Fit:</strong> {{ commento.vestibilita }}<br />
-          <strong>Quality:</strong> {{ commento.qualita }}<br />
-          <strong>Style:</strong> {{ commento.stile }}
-        </li>
-      </ul>
+      <div class="col-md-6">
+        <h2>Commenti</h2>
+        <ul id="commenti">
+          <li v-for="commento in commenti" :key="commento.id">
+            <strong>{{ commento.nome }} {{ commento.cognome }}</strong>
+            <p>{{ commento.contenuto }}</p>
+            <small>{{ commento.email }}</small>
+            <strong>Style:</strong> {{ commento.stile }}
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -61,8 +57,6 @@ export default {
         nome: "",
         cognome: "",
         email: "",
-        vestibilita: "",
-        qualita: "",
         stile: "",
       },
       messaggioSuccesso: "",
@@ -85,8 +79,6 @@ export default {
         cognome: "",
         email: "",
         contenuto: "",
-        vestibilita: "",
-        qualita: "",
         stile: "",
       };
 
