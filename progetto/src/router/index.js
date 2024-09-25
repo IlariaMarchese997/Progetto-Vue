@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CapiView from "@/views/CapiView.vue";
 import SfilateView from "@/views/SfilateView.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     name: "CapiView",
     component: CapiView,
     props: true,
+  },
+  {
+    path: "/catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
