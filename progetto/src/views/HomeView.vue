@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div class="container-fluid" style="padding: 0">
+      <!-- Immagine della sfilata selezionata -->
       <div class="row">
         <div class="col-md-12" style="text-align: center; position: relative">
-          <!-- Mostra l'immagine della sfilata selezionata sopra la lista -->
           <img
             :src="selectedSfilata.image"
             class="img-fluid"
@@ -13,57 +13,71 @@
         </div>
       </div>
 
+      <!-- Sezione con due colonne: Fashion Show e ArticoliHome -->
       <div class="row">
+        <!-- Fashion Show -->
         <div class="col-md-6" style="text-align: center">
-          <hr />
-          <h3>- Fashion shows' list -</h3>
-          <hr />
-          <ul>
-            <li id="lista" v-for="sfilata in sfilate" :key="sfilata.id">
-              <h5
-                @mouseover="mostraSfilata(sfilata)"
-                @click="goToDetail(sfilata)"
-                style="cursor: pointer"
-              >
-                {{ sfilata.nome }}
-              </h5>
-            </li>
-          </ul>
+          <h2
+            style="
+              color: white;
+              background-color: black;
+              font-weight: bold;
+              padding: 3%;
+            "
+          >
+            - FASHION SHOWS -
+          </h2>
+          <SfilateHome
+            :updateMap="updateMap"
+            @update-selected-sfilata="updateSelectedSfilata"
+            @show-modal="openModal"
+          />
+          <div
+            class="card w-100 p-3"
+            style="background-color: black; color: white; border-radius: 0"
+          >
+            <div class="card-body">
+              <h5 class="card-title">{{ selectedSfilata.location }}</h5>
+            </div>
+            <div class="ratio ratio-16x9">
+              <iframe
+                :src="mapUrl"
+                width="100%"
+                height="100%"
+                style="border: 0; width: 100%; height: 100%"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
 
-        <div class="col-md-6" style="text-align: center">
-          <h5>SPRING 2025</h5>
-          <hr />
-          <h5>FALL 2024</h5>
-          <hr />
-          <h5>SPRING 2024</h5>
-          <hr />
-          <h5>FALL 2023</h5>
-          <hr />
+        <!-- ArticoliHome -->
+        <div class="col-md-6" style="text-align: center; margin: 0">
+          <h2 id="aboutus" style="color: black; font-weight: bold; padding: 3%">
+            #ABOUT US
+          </h2>
+          <ArticoliHome />
         </div>
       </div>
 
       <!-- Modale -->
-      <div
-        v-if="showModal"
-        class="modal fade show"
-        style="display: block"
-        tabindex="-1"
-        role="dialog"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Sfilata in fase di allestimento</h5>
-            </div>
-            <div class="modal-body">
-              <p>I capi di questa sfilata saranno disponibili a breve!</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" @click="closeModal">
-                Ok!
-              </button>
-            </div>
+      <div v-show="showModal" class="modal-overlay">
+        <div class="modal-content" role="document">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              Sfilata in fase di allestimento!
+              <br /><br />
+            </h5>
+          </div>
+          <div class="modal-body">
+            <p>I capi di questa sfilata saranno disponibili a breve.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" @click="closeModal">
+              Ok!
+            </button>
           </div>
         </div>
       </div>
@@ -72,53 +86,52 @@
 </template>
 
 <script>
+import SfilateHome from "@/components/SfilateHome.vue";
+import ArticoliHome from "@/components/ArticoliHome.vue";
 export default {
   props: ["id"],
   data() {
     return {
-      showModal: false,
       selectedSfilata: {
         id: 1,
         nome: "SPRING 2025",
         image: require("@/assets/sfilata-1.jpg"),
+        location: "MIAMI",
       },
-      sfilate: [
-        {
-          id: 1,
-          nome: "SPRING 2025",
-          image: require("@/assets/sfilata-1.jpg"),
-        },
-        {
-          id: 2,
-          nome: "FALL 2024",
-          image: require("@/assets/sfilata-2.jpg"),
-        },
-        {
-          id: 3,
-          nome: "SPRING 2024",
-          image: require("@/assets/sfilata-3.jpg"),
-        },
-        {
-          id: 4,
-          nome: "FALL 2023",
-          image: require("@/assets/sfilata-4.jpg"),
-        },
-      ],
+      showModal: false,
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d356933.8714888409!2d10.413661869378636!3d45.65994086120074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781eca8aec020b9%3A0x91dcf07c1c969bb8!2s",
     };
   },
+  created() {
+    if (this.selectedSfilata && this.selectedSfilata.location) {
+      this.updateMap(this.selectedSfilata.location);
+    }
+  },
+  components: {
+    SfilateHome,
+    ArticoliHome,
+  },
   methods: {
-    mostraSfilata(sfilata) {
-      this.selectedSfilata = sfilata;
+    updateMap(location) {
+      const locationsMap = {
+        MIAMI:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.39567717758!2d-80.31186052014617!3d25.78253887384647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20Florida%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1727288054735!5m2!1sit!2sit",
+        TOKYO:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662975.6575310319!2d138.4503767417918!3d35.50429476804576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokyo%2C%20Giappone!5e0!3m2!1sit!2sit!4v1727287895754!5m2!1sit!2sit",
+        "NEW YORK":
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.0360977185!2d-74.30933341658171!3d40.69753995848721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1727287987868!5m2!1sit!2sit",
+        LONDON:
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6064073197!2d-0.43123970044350396!3d51.52860701956136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondra%2C%20Regno%20Unito!5e0!3m2!1sit!2sit!4v1727287791543!5m2!1sit!2sit",
+      };
+
+      this.mapUrl = locationsMap[location] || this.mapUrl; // Usa la location mappata o mantiene l'URL attuale
     },
-    goToDetail(sfilata) {
-      if (sfilata.id === 1) {
-        this.$router.push({ name: "Sfilate" });
-      } else if (sfilata.id === 2 || sfilata.id === 3) {
-        this.selectedSfilata = sfilata;
-        this.showModal = true; // Apri la modale
-      } else {
-        this.$router.push({ name: "NotFound" });
-      }
+    updateSelectedSfilata(sfilata) {
+      this.selectedSfilata = sfilata; // Aggiorna selectedSfilata nel componente padre
+    },
+    openModal() {
+      this.showModal = true; // Apri la modale
     },
     closeModal() {
       this.showModal = false; // Chiudi la modale
@@ -128,8 +141,61 @@ export default {
 </script>
 
 <style>
-#lista {
-  list-style-type: none;
-  margin: 5%;
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.col-md-6 {
+  padding: 0;
+  margin-bottom: 2%;
+}
+
+#aboutus {
+  margin-bottom: 20px;
+  border-bottom: 3px solid black;
+}
+
+.modal.show {
+  display: block;
+}
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: rgb(0, 0, 0);
+  color: black;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: none;
 }
 </style>
