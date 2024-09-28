@@ -143,7 +143,6 @@ export default {
 <style>
 * {
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
 }
 .home {
   display: flex;
