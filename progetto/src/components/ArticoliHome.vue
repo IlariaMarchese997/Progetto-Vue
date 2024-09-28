@@ -105,4 +105,12 @@ export default {
   width: 100%; /* Rende l'immagine responsive */
   height: auto; /* Mantiene il rapporto di aspetto */
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .card-title,
+  .btn {
+    font-size: 13px;
+    margin: none;
+  }
+}
 </style>
