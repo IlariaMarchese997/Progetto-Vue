@@ -18,18 +18,21 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link :to="{ name: 'home' }" class="nav-link"
+            <router-link
+              :to="{ name: 'home' }"
+              class="nav-link"
+              exact
+              active-class="active"
               >Home</router-link
             >
           </li>
+
           <li class="nav-item">
-            <router-link :to="{ name: 'Sfilate' }" class="nav-link"
+            <router-link
+              :to="{ name: 'Sfilate' }"
+              class="nav-link"
+              active-class="active"
               >Sfilate</router-link
-            >
-          </li>
-          <li class="nav-item">
-            <router-link :to="{ name: 'capi' }" class="nav-link"
-              >Capi</router-link
             >
           </li>
         </ul>
@@ -37,3 +40,27 @@
     </div>
   </nav>
 </template>
+
+<style scoped>
+.navbar {
+  background-color: white !important; /* Sfondo bianco */
+}
+
+.navbar-nav .nav-item {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif; /* Font */
+}
+
+.nav-link {
+  color: gray; /* Colore normale */
+}
+
+.nav-link:hover {
+  color: black; /* Colore al passaggio del mouse */
+  font-weight: bold;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid black; /* Sottolineatura */
+}
+</style>

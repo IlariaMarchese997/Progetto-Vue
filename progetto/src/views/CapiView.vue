@@ -1,8 +1,13 @@
 <template>
-  <div class="about">
-    <h1>Capi</h1>
-    <CapiDettaglio :id="$route.params.id" />
-    <FormCommenti />
+  <div class="container-fluid">
+    <div class="row">
+      <CapiDettaglio :id="$route.params.id" />
+    </div>
+    <hr class="w-50 mx-auto my-4" />
+    <div></div>
+    <div class="row">
+      <FormCommenti />
+    </div>
   </div>
 </template>
 
