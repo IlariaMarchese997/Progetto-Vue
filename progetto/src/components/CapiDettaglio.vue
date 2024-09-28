@@ -1,7 +1,7 @@
 <template>
   <div v-if="capo" class="container mt-4">
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row mx-5">
+      <div class="col-md-5">
         <div
           id="carouselDettagli"
           class="carousel slide"
@@ -49,15 +49,73 @@
       </div>
       <div class="col-md-6">
         <h1>{{ capo.nome }}</h1>
-        <p>{{ capo.descrizione }}</p>
-        <ul id="descrizione">
-          <li><strong>Description:</strong> {{ capo.descrizione }}</li>
-          <li><strong>Material:</strong> {{ capo.composizione }}</li>
-          <li><strong>Price:</strong> {{ capo.costo }}</li>
-          <li><strong>Lining</strong> {{ capo.lining }}</li>
-          <li><strong>Made in:</strong> {{ capo.made }}</li>
-          <li><strong>Clean:</strong> {{ capo.lavaggio }}</li>
-          <li><strong>Serial Number</strong> {{ capo.numeroDiSerie }}</li>
+
+        <ul class="text-start list-unstyled">
+          <div class="row">
+            <li>
+              <strong>Price:</strong><br />
+              <span class="fs-3">{{ capo.costo }}</span>
+            </li>
+            <li class="mb-3">
+              <strong>Description:</strong><br />
+              {{ capo.descrizione }}
+            </li>
+            <div class="col-md-6">
+              <li>
+                <strong>Material:</strong><br />
+                {{ capo.composizione }}
+              </li>
+              <li><strong>Made in:</strong> {{ capo.made }}</li>
+            </div>
+
+            <div class="col-md-5">
+              <li>
+                <strong>Lining</strong><br />
+                {{ capo.lining }}
+              </li>
+              <li>
+                <strong>Clean:</strong>
+                {{ capo.lavaggio }}
+              </li>
+              <li>
+                <strong>Serial Number</strong>
+                {{ capo.numeroDiSerie }}
+              </li>
+            </div>
+          </div>
+          <hr class="w-50 mx-auto my-4" />
+          <div class="row">
+            <div class="col-md-12">
+              <li class="mb-1">
+                <strong>Color:</strong> {{ capo.coloreNome }}<br />
+                <div
+                  class="colore-box rounded-pill"
+                  :style="{ backgroundColor: capo.colore }"
+                ></div>
+              </li>
+              <li>
+                <strong>Italian Size:</strong><br />
+                <div class="taglie-box flex-wrap">
+                  <span
+                    v-for="(taglia, index) in capo.taglie"
+                    :key="index"
+                    class="taglia btn btn-outline-secondary rounded-pill me-2 mb-2 mt-2"
+                  >
+                    {{ taglia }}
+                  </span>
+                </div>
+              </li>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col text-center mt-3">
+              <p>
+                <button type="submit" class="btn btn-dark rounded-pill">
+                  <i class="fas fa-phone me-2"></i> Reserve Now
+                </button>
+              </p>
+            </div>
+          </div>
         </ul>
       </div>
     </div>
@@ -87,6 +145,8 @@ export default {
             require("@/assets/Prefall2024/Cady-Jumpsuit4.jpeg"),
             require("@/assets/Prefall2024/Cady-Jumpsuit5.jpeg"),
           ],
+          colore: "#000000",
+          taglie: ["34", "36", "38", "40", "42", "44", "Su misura"],
         },
         {
           id: 2,
@@ -105,6 +165,8 @@ export default {
             require("@/assets/Prefall2024/Cady-Long-Dress4.jpeg"),
             require("@/assets/Prefall2024/Cady-Long-Dress5.jpg"),
           ],
+          colore: "#FFFFFF",
+          taglie: ["34", "36", "38", "40", "42", "44", "Su misura"],
         },
         {
           id: 3,
@@ -123,6 +185,8 @@ export default {
             require("@/assets/Prefall2024/Embroidered-Dress4.jpeg"),
             require("@/assets/Prefall2024/Embroidered-Dress5.jpeg"),
           ],
+          colore: "#000000",
+          taglie: ["34", "36", "38", "40", "42", "44", "Su misura"],
         },
         {
           id: 4,
@@ -141,6 +205,8 @@ export default {
             require("@/assets/Prefall2024/Chiffon-Draped-Dress4.jpg"),
             require("@/assets/Prefall2024/Chiffon-Draped-Dress5.jpeg"),
           ],
+          colore: "#3E3EFF",
+          taglie: ["34", "36", "38", "40", "42", "44", "Su misura"],
         },
       ],
       capo: null, // Il capo selezionato verrà assegnato qui
@@ -161,7 +227,10 @@ export default {
 .carousel-indicators li::marker {
   content: ""; /* Nasconde il contenuto del marker */
 }
-#descrizione {
-  list-style-type: none;
+.colore-box {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
 }
 </style>

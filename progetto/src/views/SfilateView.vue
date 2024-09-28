@@ -2,8 +2,6 @@
   <div class="home">
     <div>
       <h1>Seleziona un capo</h1>
-
-      <!-- Bootstrap Carousel -->
       <div id="carouselCapi" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <!-- Loop attraverso i capi per generare ogni elemento dello slider -->
@@ -44,7 +42,6 @@
         </button>
       </div>
     </div>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
