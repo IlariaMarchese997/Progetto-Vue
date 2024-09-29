@@ -86,24 +86,24 @@ export default {
 }
 
 .card-container {
-  margin: 0 auto; /* Centra il contenitore */
-  padding: 20px; /* Aggiunge padding al contenitore */
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
-  flex-wrap: wrap; /* Permette il wrapping delle card */
-  justify-content: space-between; /* Distribuisce lo spazio tra le card */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
   background-color: black;
   color: white;
   border-radius: 0;
-  margin-bottom: 20px; /* Spazio tra le card */
-  flex: 0 1 calc(33.333% - 20px); /* Tre card per riga con spazio */
+  margin-bottom: 20px;
+  flex: 0 1 calc(33.333% - 20px);
 }
 
 .card-img-top {
-  width: 100%; /* Rende l'immagine responsive */
-  height: auto; /* Mantiene il rapporto di aspetto */
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

@@ -13,9 +13,9 @@
         </div>
       </div>
 
-      <!-- Sezione con due colonne: Fashion Show e ArticoliHome -->
+      <!-- Sezione con due colonne: Fashion Shows e ArticoliHome -->
       <div class="row">
-        <!-- Fashion Show -->
+        <!-- Fashion Shows -->
         <div class="col-md-6" style="text-align: center">
           <h2
             style="
@@ -32,10 +32,8 @@
             @update-selected-sfilata="updateSelectedSfilata"
             @show-modal="openModal"
           />
-          <div
-            class="card w-100 p-3"
-            style="background-color: black; color: white; border-radius: 0"
-          >
+          <!-- Mappa -->
+          <div class="card w-100 p-3" style="border-radius: 0">
             <div class="card-body">
               <h5 class="card-title">{{ selectedSfilata.location }}</h5>
             </div>
@@ -125,16 +123,16 @@ export default {
           "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6064073197!2d-0.43123970044350396!3d51.52860701956136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondra%2C%20Regno%20Unito!5e0!3m2!1sit!2sit!4v1727287791543!5m2!1sit!2sit",
       };
 
-      this.mapUrl = locationsMap[location] || this.mapUrl; // Usa la location mappata o mantiene l'URL attuale
+      this.mapUrl = locationsMap[location] || this.mapUrl; // Usa la location mappata o mantieni l'URL attuale
     },
     updateSelectedSfilata(sfilata) {
-      this.selectedSfilata = sfilata; // Aggiorna selectedSfilata nel componente padre
+      this.selectedSfilata = sfilata; // Aggiorna selectedSfilata
     },
     openModal() {
-      this.showModal = true; // Apri la modale
+      this.showModal = true;
     },
     closeModal() {
-      this.showModal = false; // Chiudi la modale
+      this.showModal = false;
     },
   },
 };
