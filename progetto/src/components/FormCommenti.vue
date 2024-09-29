@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid mt-4">
+    <h2 class="mb-4">We value your opinion</h2>
     <form class="comment-form" @submit.prevent="onSubmit">
       <div class="row g-5 mx-5">
         <div v-if="messaggioSuccesso" class="success">
@@ -113,7 +114,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <h2>Comment</h2>
+          <h3>Comment</h3>
           <ul id="commenti">
             <li v-for="commento in commenti" :key="commento.id">
               <strong>{{ commento.nome }} {{ commento.cognome }}</strong>

@@ -4,7 +4,9 @@
       <CapiDettaglio :id="$route.params.id" />
     </div>
     <hr class="w-50 mx-auto my-4" />
-    <div></div>
+    <div>
+      <AccessVisual />
+    </div>
     <div class="row">
       <FormCommenti />
     </div>
@@ -12,6 +14,7 @@
 </template>
 
 <script>
+import AccessVisual from "@/components/AccessVisual.vue";
 import CapiDettaglio from "@/components/CapiDettaglio.vue";
 import FormCommenti from "@/components/FormCommenti.vue";
 
@@ -21,6 +24,7 @@ export default {
   components: {
     CapiDettaglio,
     FormCommenti,
+    AccessVisual,
   },
 };
 </script>
