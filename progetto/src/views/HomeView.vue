@@ -33,10 +33,7 @@
             @show-modal="openModal"
           />
           <!-- Mappa -->
-          <div
-            class="card w-100 p-3"
-            style="background-color: black; color: white; border-radius: 0"
-          >
+          <div class="card w-100 p-3" style="border-radius: 0">
             <div class="card-body">
               <h5 class="card-title">{{ selectedSfilata.location }}</h5>
             </div>

@@ -86,10 +86,10 @@ export default {
 }
 
 .card-container {
-  margin: 0 auto; 
-  padding: 20px; 
+  margin: 0 auto;
+  padding: 20px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -97,13 +97,13 @@ export default {
   background-color: black;
   color: white;
   border-radius: 0;
-  margin-bottom: 20px; 
-  flex: 0 1 calc(33.333% - 20px); 
+  margin-bottom: 20px;
+  flex: 0 1 calc(33.333% - 20px);
 }
 
 .card-img-top {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

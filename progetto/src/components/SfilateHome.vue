@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     mostraSfilata(sfilata) {
-      this.$emit("update-selected-sfilata", sfilata); 
+      this.$emit("update-selected-sfilata", sfilata);
       if (this.updateMap) {
         this.updateMap(sfilata.location); // Aggiornamento della mappa
       }
