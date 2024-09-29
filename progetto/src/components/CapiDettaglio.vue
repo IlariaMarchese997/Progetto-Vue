@@ -137,7 +137,7 @@ export default {
           id: 1,
           nome: "Cady Jumpsuit",
           descrizione:
-            "La *Cady Jumpsuit* di Zuhair Murad è un capo elegante e contemporaneo realizzato in tessuto cady, caratterizzato da una silhouette strutturata e sofisticata. Il taglio sartoriale offre una vestibilità impeccabile, mentre il design monocromatico con scollatura profonda e vita accentuata dona un tocco di raffinatezza moderna.",
+            "Zuhair Murad's Cady Jumpsuit is an elegant and contemporary piece made from cady fabric, featuring a structured and sophisticated silhouette. The tailored cut offers an impeccable fit, while the monochromatic design with a plunging neckline and accentuated waist lends a touch of modern sophistication.",
           costo: "2,970 EUR",
           composizione: "87% Acetate 13% Polyester",
           lining: "100% Polyester",
@@ -156,7 +156,7 @@ export default {
         },
         {
           id: 2,
-          nome: "Il *Cady Long Dress* di Zuhair Murad è un abito lungo sofisticato, realizzato in tessuto cady, noto per la sua fluidità e struttura impeccabile. La silhouette pulita e aderente è arricchita da un'elegante scollatura e dettagli sartoriali che esaltano la figura.",
+          nome: "Zuhair Murad's Cady Long Dress is a sophisticated long dress made of cady fabric, known for its fluidity and impeccable structure. The clean, fitted silhouette is enhanced by an elegant neckline and figure-flattering tailoring details.",
           descrizione: "Cady One-Shoulder Long Dress with Side Cape ",
           costo: "3,390 EUR",
           composizione: "87% Acetate 13% Polyester",
@@ -176,7 +176,7 @@ export default {
         },
         {
           id: 3,
-          nome: "L'*Embroidered Dress* di Zuhair Murad è un abito di alta classe, impreziosito da ricami intricati che decorano la silhouette fluida in modo sofisticato. Realizzato in tessuto pregiato, questo abito lungo è caratterizzato da dettagli meticolosi e trasparenze eleganti che esaltano la femminilità.",
+          nome: "Zuhair Murad's Embroidered Dress is a high-class gown embellished with intricate embroidery that decorates the flowing silhouette in a sophisticated manner. Made of fine fabric, this long dress features meticulous details and elegant transparencies that enhance femininity.",
           descrizione: "Embroidered Dress",
           costo: "2,450 EUR",
           composizione: "64% Polyester 36% Nylon",
@@ -196,7 +196,7 @@ export default {
         },
         {
           id: 4,
-          nome: "Il *Chiffon Draped Dress* di Zuhair Murad è un capolavoro di eleganza fluida, realizzato in chiffon leggero e drappeggiato con maestria per creare movimento e grazia.",
+          nome: "Zuhair Murad's Chiffon Draped Dress is a masterpiece of fluid elegance, made of lightweight chiffon and draped expertly to create movement and grace.",
           descrizione: "Chiffon Draped Long Dress in 100% Silk",
           costo: "4,370 EUR",
           composizione: "100 % Silk",
