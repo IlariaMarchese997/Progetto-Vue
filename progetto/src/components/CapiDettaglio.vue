@@ -1,6 +1,6 @@
 <template>
   <div v-if="capo" class="container mt-4">
-    <div class="row">
+    <div class="row d-flex align-items-stretch">
       <div class="col-md-6">
         <div
           id="carouselDettagli"
@@ -108,12 +108,17 @@
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col text-center mt-3">
-              <p>
+            <div class="text-center mt-3 d-flex justify-content-center">
+              <div class="mr-2 me-2">
                 <button type="submit" class="btn btn-dark rounded-pill">
                   <i class="fas fa-phone me-2"></i> Reserve Now
                 </button>
-              </p>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-dark rounded-pill">
+                  <i class="fa-solid fa-envelope me-2"></i> Write to us
+                </button>
+              </div>
             </div>
           </div>
         </ul>
@@ -131,7 +136,8 @@ export default {
         {
           id: 1,
           nome: "Cady Jumpsuit",
-          descrizione: "Cady Sleeveless Jumpsuit",
+          descrizione:
+            "La *Cady Jumpsuit* di Zuhair Murad è un capo elegante e contemporaneo realizzato in tessuto cady, caratterizzato da una silhouette strutturata e sofisticata. Il taglio sartoriale offre una vestibilità impeccabile, mentre il design monocromatico con scollatura profonda e vita accentuata dona un tocco di raffinatezza moderna.",
           costo: "2,970 EUR",
           composizione: "87% Acetate 13% Polyester",
           lining: "100% Polyester",
@@ -150,7 +156,7 @@ export default {
         },
         {
           id: 2,
-          nome: "Cady Long Dress",
+          nome: "Il *Cady Long Dress* di Zuhair Murad è un abito lungo sofisticato, realizzato in tessuto cady, noto per la sua fluidità e struttura impeccabile. La silhouette pulita e aderente è arricchita da un'elegante scollatura e dettagli sartoriali che esaltano la figura.",
           descrizione: "Cady One-Shoulder Long Dress with Side Cape ",
           costo: "3,390 EUR",
           composizione: "87% Acetate 13% Polyester",
@@ -170,7 +176,7 @@ export default {
         },
         {
           id: 3,
-          nome: "Embroidered Dress",
+          nome: "L'*Embroidered Dress* di Zuhair Murad è un abito di alta classe, impreziosito da ricami intricati che decorano la silhouette fluida in modo sofisticato. Realizzato in tessuto pregiato, questo abito lungo è caratterizzato da dettagli meticolosi e trasparenze eleganti che esaltano la femminilità.",
           descrizione: "Embroidered Dress",
           costo: "2,450 EUR",
           composizione: "64% Polyester 36% Nylon",
@@ -190,7 +196,7 @@ export default {
         },
         {
           id: 4,
-          nome: "Chiffon Draped Long Dress",
+          nome: "Il *Chiffon Draped Dress* di Zuhair Murad è un capolavoro di eleganza fluida, realizzato in chiffon leggero e drappeggiato con maestria per creare movimento e grazia.",
           descrizione: "Chiffon Draped Long Dress in 100% Silk",
           costo: "4,370 EUR",
           composizione: "100 % Silk",

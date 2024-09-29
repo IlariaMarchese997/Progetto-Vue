@@ -32,7 +32,7 @@
               :to="{ name: 'Sfilate' }"
               class="nav-link"
               active-class="active"
-              >Sfilate</router-link
+              >Fashion Show</router-link
             >
           </li>
         </ul>

@@ -12,7 +12,7 @@
             </li>
             <li class="nav-item">
               <router-link :to="{ name: 'Sfilate' }" class="nav-link"
-                >Sfilate</router-link
+                >Fashion Show</router-link
               >
             </li>
           </ul>

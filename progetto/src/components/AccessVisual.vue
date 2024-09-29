@@ -43,7 +43,11 @@
         <div
           class="card h-100 shadow-sm"
           :style="{
-            backgroundColor: categoryColors[accessory.category] || '#f8f9fa',
+            borderColor: categoryColors[accessory.category] || '#f8f9fa',
+            backgroundColor: 'trasparent',
+            borderStyle: 'solid',
+            borderWidth: '3px',
+            textAlign: 'left',
           }"
         >
           <img
@@ -55,11 +59,7 @@
           <div class="card-body text-center">
             <h5
               class="card-title fs-6 fs-md-5 fs-lg-4"
-              :class="
-                isLightColor(categoryColors[accessory.category])
-                  ? 'text-dark'
-                  : 'text-light'
-              "
+              :style="{ color: 'black' }"
             >
               {{ accessory.name }}
               <!-- Bianco ecc mi serve per adattare il testo in base al colore dello sfondo -->
