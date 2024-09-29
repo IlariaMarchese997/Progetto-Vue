@@ -1,9 +1,9 @@
 <template>
-  <footer class="bg-dark text-white text-center py-3">
+  <footer class="bg-black text-white text-center p-4">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h5>Explore our World</h5>
+          <h4>Explore our World</h4>
           <ul class="list-unstyled">
             <li class="nav-item">
               <router-link :to="{ name: 'home' }" class="nav-link"
@@ -18,14 +18,20 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <h5>Contact us</h5>
-          <p>
-            Email: info@example.com <br />
-            Telefono: +961 1 575 222
-          </p>
+          <h4>Contact us</h4>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa-solid fa-envelope"></i> orders@zuhairmurad.com
+              <br />We’ll reply within 48hours
+            </li>
+            <br />
+            <li><i class="fa-solid fa-phone"></i> +961 1 575 222</li>
+            <li><i class="fa-brands fa-whatsapp"></i> +961 81 328 019</li>
+            MON to FRI 9:00AM to 6:00PM
+          </ul>
         </div>
         <div class="col-md-4">
-          <h5>Follow us</h5>
+          <h4>Follow us</h4>
           <a
             href="https://www.facebook.com/zuhairmuradofficial"
             class="text-white mx-2"
@@ -64,6 +70,15 @@
           >
             <i class="fab fa-youtube"></i>
           </a>
+          <div class="mt-5">
+            <router-link class="navbar-brand" to="/">
+              <img
+                alt="Zuhair Murad's logo"
+                width="300px"
+                src="../assets/Logobianco.png"
+              />
+            </router-link>
+          </div>
         </div>
       </div>
       <div class="row mt-3">
