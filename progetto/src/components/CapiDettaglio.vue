@@ -1,10 +1,10 @@
 <template>
   <div v-if="capo" class="container mt-4">
-    <div class="row mx-5">
-      <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-6">
         <div
           id="carouselDettagli"
-          class="carousel slide"
+          class="carousel slide container d-flex"
           data-bs-ride="carousel"
         >
           <ol class="carousel-indicators">
@@ -47,7 +47,7 @@
           </button>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 p-5">
         <h1>{{ capo.nome }}</h1>
 
         <ul class="text-start list-unstyled">
