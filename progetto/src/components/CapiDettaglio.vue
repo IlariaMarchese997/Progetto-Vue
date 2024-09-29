@@ -156,8 +156,9 @@ export default {
         },
         {
           id: 2,
-          nome: "Zuhair Murad's Cady Long Dress is a sophisticated long dress made of cady fabric, known for its fluidity and impeccable structure. The clean, fitted silhouette is enhanced by an elegant neckline and figure-flattering tailoring details.",
-          descrizione: "Cady One-Shoulder Long Dress with Side Cape ",
+          nome: "Cady Long Dress",
+          descrizione:
+            "Cady Long Dress is a sophisticated long dress made of cady fabric, known for its fluidity and impeccable structure. The clean, fitted silhouette is enhanced by an elegant neckline and figure-flattering tailoring details.",
           costo: "3,390 EUR",
           composizione: "87% Acetate 13% Polyester",
           lining: "Removable lining included, 100% Polyester",
@@ -176,8 +177,9 @@ export default {
         },
         {
           id: 3,
-          nome: "Zuhair Murad's Embroidered Dress is a high-class gown embellished with intricate embroidery that decorates the flowing silhouette in a sophisticated manner. Made of fine fabric, this long dress features meticulous details and elegant transparencies that enhance femininity.",
-          descrizione: "Embroidered Dress",
+          nome: "Embroidered Dress",
+          descrizione:
+            "Zuhair Murad's Embroidered Dress is a high-class gown embellished with intricate embroidery that decorates the flowing silhouette in a sophisticated manner. Made of fine fabric, this long dress features meticulous details and elegant transparencies that enhance femininity.",
           costo: "2,450 EUR",
           composizione: "64% Polyester 36% Nylon",
           lining: "100 % Silk",
@@ -196,8 +198,10 @@ export default {
         },
         {
           id: 4,
-          nome: "Zuhair Murad's Chiffon Draped Dress is a masterpiece of fluid elegance, made of lightweight chiffon and draped expertly to create movement and grace.",
-          descrizione: "Chiffon Draped Long Dress in 100% Silk",
+          nome: "Chiffon Draped Dress",
+          descrizione:
+            "Zuhair Murad's Chiffon Draped Dress is a masterpiece of fluid elegance, made of lightweight chiffon and draped expertly to create movement and grace.",
+
           costo: "4,370 EUR",
           composizione: "100 % Silk",
           lining: "100 % Silk",
