@@ -21,7 +21,7 @@ export default {
         id: 1,
         nome: "SPRING 2025",
         image: require("@/assets/sfilata-1.jpg"),
-        location: "MIAMI", // Aggiungi la location di default
+        location: "MIAMI", // location di default
       },
       sfilate: [
         {
@@ -53,9 +53,9 @@ export default {
   },
   methods: {
     mostraSfilata(sfilata) {
-      this.$emit("update-selected-sfilata", sfilata); // Emittiamo un evento per aggiornare il genitore
+      this.$emit("update-selected-sfilata", sfilata); 
       if (this.updateMap) {
-        this.updateMap(sfilata.location); // Mantieni il comportamento di aggiornamento della mappa
+        this.updateMap(sfilata.location); // Aggiornamento della mappa
       }
     },
     goToDetail(sfilata) {
@@ -63,7 +63,7 @@ export default {
         this.$router.push({ name: "Sfilate" });
       } else if (sfilata.id === 2 || sfilata.id === 3) {
         this.selectedSfilata = sfilata;
-        this.$emit("show-modal"); // Apri la modale
+        this.$emit("show-modal"); // Modale
       } else {
         this.$router.push({ name: "NotFound" });
       }
